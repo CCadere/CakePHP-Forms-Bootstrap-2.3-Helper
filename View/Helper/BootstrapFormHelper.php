@@ -1,4 +1,12 @@
 <?php
+/**
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ *
+ * Licensed under The MIT License
+ *
+ * Copyright (c) La Pâtisserie, Inc. (http://patisserie.keensoftware.com/)
+ * @license     MIT License (http://www.opensource.org/licenses/mit-license.php)
+ */
 
 App::uses('FormHelper', 'View/Helper');
 
