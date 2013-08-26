@@ -25,15 +25,15 @@ class BootstrapFormHelper extends FormHelper {
 		'class' => 'input-xxlarge',
 		'error' => array('attributes' => array('wrap' => 'span', 'class' => 'help-inline'))
 	);
-	
+
 /**
  * Added an array_merge_recursive for labels to combine $_inputDefaults with specific view markup for labels like custom text.
  * Also removed null array for options existing in $_inputDefaults.
  */
 	protected function _parseOptions($options) {
-		if(!empty($options['label'])) {
+		if (!empty($options['label'])) {
 			//manage case 'label' => 'your label' as well as 'label' => array('text' => 'your label') before array_merge()
-			if(!is_array($options['label'])) {
+			if (!is_array($options['label'])) {
 				$options['label'] = array('text' => $options['label']);
 			}
 			$options['label'] = array_merge_recursive($options['label'], $this->_inputDefaults['label']);
@@ -45,7 +45,7 @@ class BootstrapFormHelper extends FormHelper {
 		);
 		return parent::_parseOptions($options);
 	}
-	
+
 /**
  * adds the default class 'form-horizontal to the <form>
  * 
@@ -57,7 +57,7 @@ class BootstrapFormHelper extends FormHelper {
 		$options = array_merge($class, $options);
 		return parent::create($model, $options);
 	}
-	
+
 /**
  * modified the first condition with a more general empty() otherwise if $default is an empty array
  * !is_null() returns true and $this->_inputDefaults is erased
@@ -72,6 +72,6 @@ class BootstrapFormHelper extends FormHelper {
 		}
 		return $this->_inputDefaults;
 	}
-	
+
 }
 
